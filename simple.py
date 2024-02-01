@@ -117,5 +117,5 @@ current_question = 0
 # show the first question
 show_question()
 
-    
-####
+# start the main event loop
+root.mainloop()
