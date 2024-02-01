@@ -1,6 +1,6 @@
 quiz_data = [
         {
-            "question": "Which of those is odd ?",
+            "question": "Which of this is odd ?",
             "choices": ["Queue", "Array", "Linked List", "Stack"],
             "answer": "Array"
         },
@@ -20,9 +20,9 @@ quiz_data = [
             "answer": "Irene Aragona"
         },
         {
-            "question": "Who is Co founder of alx africa ?",
-            "choices": ["Julien Barieber", "Irene Arogan", "Gullieme", "Firaol Mekebib"],
-            "answer": "Julien Barieber"
+            "question": "Which is the best suited algorithm for Graph Coloring Problem ?",
+            "choices": ["Shortest Path Algorithm", "Sorting Algorithm", "Backtracking", "Kruskal's Algorithm"],
+            "answer": "Backtracking"
         },
         {
             "question": "Who is Founder of Holberton School ?",
