@@ -34,16 +34,34 @@ def check_ans():
     else:
         fb_label.config(text="Incorrect!", foreground="red")
 
+    # Disable all choice button and enable the next button
+    for button in choice_btns:
+        button.config(state="disabled")
+    next_btn.config(state="normal")
 
+# function to move to the next question
 def next_question():
-    pass
+    global current_question
+    current_question += 1
 
+    if current_question < len(quiz_data):
+        # if there are more questions, show the next question
+        show_question()
+    else:
+        # if all have been answered, display result
+        messagebox.showinfo("Quiz Completed",
+                            "Quiz Completed! Final Score: {}/{}".format(score, len(quiz_data)))
+        root.destroy()
 
 # build the main window
 root = tk.Tk()
 root.title("ALX_SWE Simple Quiz")
 root.geometry("600x500")
 style = style(theme="flatly")
+
+# configure the font size for the question and choice buttons
+style.configure("TLabel", font=("Helvetica", 20))
+style.configure("TButton", font=("Helvetica", 18))
 
 # build question label
 qs_label = ttk.Label(
@@ -82,6 +100,7 @@ score_label = ttk.Label(
     anchor="center",
     padding=10
 )
+score_label.pack(pady=10)
 
 # Build the next button
 next_btn = ttk.Button(
