@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
-from ttkbootstrap import style
+from ttkbootstrap import Style
 from data import quiz_data
 
 # function will display the current question and choices
@@ -19,7 +19,7 @@ def show_question():
     next_btn.config(state="disabled")
 
 # function to check selected answer and provide feedback
-def check_ans():
+def check_ans(choice):
     # get current question from the quiz_data
     question = quiz_data[current_question]
     selected_choice = choice_btns[choice].cget("text")
@@ -57,7 +57,7 @@ def next_question():
 root = tk.Tk()
 root.title("ALX_SWE Simple Quiz")
 root.geometry("600x500")
-style = style(theme="flatly")
+style = Style(theme="flatly")
 
 # configure the font size for the question and choice buttons
 style.configure("TLabel", font=("Helvetica", 20))
@@ -67,7 +67,7 @@ style.configure("TButton", font=("Helvetica", 18))
 qs_label = ttk.Label(
     root,
     anchor="center",
-    wraplength
+    wraplength=500,
     padding=10
 )
 qs_label.pack(pady=10)
@@ -83,7 +83,7 @@ for i in range(4):
     choice_btns.append(button)
 
 # Create the feedback label
-fb_label = ttk.label(
+fb_label = ttk.Label(
     root,
     anchor="center",
     padding=10
@@ -117,4 +117,5 @@ current_question = 0
 # show the first question
 show_question()
 
-#
+    
+####
